@@ -464,6 +464,6 @@ public class RedisService {
 			// 최초 실행일경우
 			redisTemplate.expire(key, Duration.ofHours(2)); // 2시간 후 만료
 		}
-		return count <= 20; // 5회까지 허용
+		return count <= 20;
 	}
 }
