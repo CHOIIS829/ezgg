@@ -415,7 +415,7 @@ public class RedisService {
 		}
 	}
 
-	public List<Map<String, String>> getTwentyMatchedUsers() {
+	public List<Map<String, String>> getMatchedUsers() {
 		long now = System.currentTimeMillis();
 		long threshold = now - 1000 * 60 * 5; // 10분 전 시간
 

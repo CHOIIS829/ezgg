@@ -91,7 +91,7 @@ public class RedisStreamConsumer {
 
 	@Scheduled(fixedDelay = 1000 * 60) // 1분마다 실행
 	public void findDuoGame() {
-		List<Map<String, String>> matchedUsers = redisService.getTwentyMatchedUsers();
+		List<Map<String, String>> matchedUsers = redisService.getMatchedUsers();
 		if (matchedUsers == null || matchedUsers.isEmpty()) {
 			return;
 		}
