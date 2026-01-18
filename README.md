@@ -49,7 +49,6 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 - **ElasticSearch** - 검색 및 매칭 알고리즘
 - **Redis** - 캐싱 및 세션 관리
 - **Docker** - 컨테이너화
-- **Swagger** - API 문서화
 
 ### Frontend
 - **React 19.1** + **Vite**
@@ -59,29 +58,9 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 - **Riot Games API** - 게임 데이터 연동
 - **OpenAI API** - 자연어 처리 매칭
 
-
-## 🚀 시작하기
-
-### 환경 설정
-
-프로젝트 루트에 `.env` 파일을 생성하고 다음 정보를 입력하세요:
-
-```bash
-# OpenAI API (자연어 처리 매칭)
-OPENAI_API_KEY=your_openai_api_key
-
-# 보안 키
-SECRET_KEY=your_secret_key
-
-# Riot Games API (게임 데이터)
-RIOT_API_KEY=your_riot_api_key
-```
-
 > ⚠️ **주의사항**: Riot API 키는 **매일 갱신**이 필요하며, **사용 횟수 제한**이 있습니다.
 
-## 📋 개발 규칙
-
-- **코딩 컨벤션**: [네이버 코딩 컨벤션](https://github.com/naver/hackday-conventions-java) 준수
-- **API 문서**: Swagger를 통한 API 명세 관리
-- **테스트**: 단위 테스트 작성으로 안정성 확보
-
+## 📨 Contact
+- **Developer**: INSU
+- **Email**: cth7097@naver.com
+- **GitHub**: [github.com/CHOIIS829](https://github.com/CHOIIS829)
