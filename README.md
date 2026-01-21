@@ -9,6 +9,8 @@
   플레이 스타일과 성향에 맞는 최적의 듀오 파트너를 찾아보세요!
 </p>
 
+<br>
+
 ## 🛠 기술 스택
 
 | Category | Tech Stack |
@@ -26,6 +28,7 @@
 EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매칭 플랫폼**입니다.  
 혼자가 아닌 **듀오로 랭크를 올리고 싶은 유저들**에게 자신의 플레이 스타일과 성향에 맞는 파트너를 찾을 수 있는 서비스를 제공합니다.
 
+<br>
 
 ## 🔍 나의 구현한 기능
 
@@ -92,32 +95,82 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 6. 확인된 매칭유저들은 MySQL에 review데이터를 생성하고 redis의 pending-review에 작성해야될 리뷰데이터를 저장
 7. 웹소켓의 연결 여부를 판별하여 웹소켓이 연결되어있는 유저들을 /user/queue/review로 리뷰 알림 발송
 
+<br>
+
+
 ### ✨ 주요 기능
-- 🔍 **스마트 검색**: 플레이 스타일 기반 듀오 파트너 검색
+---
+
+#### ▼ 🧩 로그인 & 회원가입
 <p align="center">
-<img width="800" alt="스마트 검색" src="https://github.com/user-attachments/assets/9a4931e2-1bbf-453c-aaab-6e6d182788f5" />
+<img width="712" height="560" alt="Image" src="https://github.com/user-attachments/assets/86436b8a-a911-49a9-97b9-73a37199a816" />
+<img width="718" height="975" alt="Image" src="https://github.com/user-attachments/assets/26866e40-3927-4f07-b846-b165c7ba765e" />
 </p>
 
-- 🎯 **실시간 매칭**: WebSocket을 활용한 즉시 매칭
+- ✅ **JWT + Spring Security 기반 로그인 구현**
+- 🔐 **Access/Refresh 토큰 구조 + Redis 저장소 관리**
+- 🧹 **로그아웃 시 토큰 블랙리스트 처리 및 쿠키 삭제**
+- 🔒 **BCryptPasswordEncoder를 활용한 비밀번호 암호화**
+- 🚫 **미로그인 상태로 접근 시 로그인 페이지로 리다이렉트**
+
+<br>
+
+#### ▼ 🏠 메인페이지
 <p align="center">
-<img width="800" alt="스마트 검색" src="https://github.com/user-attachments/assets/3f0e6ee0-cae7-415c-9d77-44633dfc929f" />
+<img width="2550" height="1283" alt="Image" src="https://github.com/user-attachments/assets/c433f558-b5cc-4081-aadd-f5eb48af0d0c" />
 </p>
 
-- 📊 **통계 분석**: 라이엇 API 연동으로 정확한 게임 데이터 제공
+- 🧭 **사용자 정보와 매칭 조건을 UI 섹션으로 분리하여 배치**
+- 👀 **꼭 필요한 정보만 표시해 심플하고 직관적인 UI 구성**
+- 📊 **최근 경기 기반 요약 정보 제공 (내역이 포함되어 있으면 명시 가능)**
+
+<br>
+
+#### ▼ 🎯 매칭 페이지
 <p align="center">
-<img width="809" alt="타임라인" src="https://github.com/user-attachments/assets/28b3eaab-f2db-49e2-8aea-bcc06d8fddbf" />
-</p>
- 
-- 💬 **커뮤니케이션**: 매칭 후 원활한 소통 지원
-<p align="center">
-<img width="800" alt="채팅화면" src="https://github.com/user-attachments/assets/1a449ccf-64a3-4428-8710-8aedf3f3414a" />
+<img width="1495" height="991" alt="Image" src="https://github.com/user-attachments/assets/5a4e23f5-cb00-42c9-81a5-2f232970ec3d" />
+<img width="1467" height="841" alt="Image" src="https://github.com/user-attachments/assets/0b98d638-a241-4139-a46d-a61a7c966077" />
 </p>
 
-## 🏗 서비스 아키텍처
+- 👨‍🦱 **왼쪽: 나의 최근 20경기 정보 및 티어/포지션 정보 표시**
+- 🎛️ **오른쪽: 매칭 조건 설정 및 시작 버튼 제공**
+- 🔍 **매칭 조건 설정 후, 사용자에게 입력 조건을 다시 보여줘 실수 방지**
+- 🧠 **사용자 경험 중심의 매칭 인터페이스 설계**
 
+<br>
+
+#### ▼ 🤝 매칭 완료 페이지
 <p align="center">
-  <img width="800" alt="아키텍처" src="https://github.com/user-attachments/assets/129b0b13-3a47-42af-90fd-92587cad1988" />
+<img width="1435" height="1173" alt="Image" src="https://github.com/user-attachments/assets/9dd54cf4-a78c-4d3e-befe-3005ab4c2163" />
 </p>
+
+- 👫 **매칭된 상대방의 요약 정보를 직관적으로 표시**
+- 💬 **실시간 채팅 기능 (WebSocket 기반)**
+- 🆔 **매칭 유저의 롤 닉네임 + 태그 복사 버튼 제공**
+
+<br>
+
+#### ▼ 🕒 듀오 타임라인
+<p align="center">
+<img width="830" height="745" alt="Image" src="https://github.com/user-attachments/assets/9a0b6a67-93dd-432a-b381-1340952e3083" />
+</p>
+
+- 📜 **지금까지 매칭된 유저 목록 + 실제로 게임을 진행한 기록을 시각적으로 제공**
+- 🕹️ **타임라인 기반으로 과거 듀오 활동 이력 파악 가능**
+
+<br>
+
+#### ▼ 📝 리뷰 시스템
+<p align="center">
+<img width="5112" height="2584" alt="Image" src="https://github.com/user-attachments/assets/980e1969-dcc5-45bb-afb2-19a6bd874fe4" />
+</p>
+
+- ✍️ **실제 듀오 플레이가 확인된 유저에 한해 리뷰 작성 가능**
+- 🧩 **Riot API를 통해 게임 내 매칭 여부(같은 팀, 같은 게임) 검증**
+- 📨 **리뷰가 필요한 유저에게 웹소켓 기반 알림 발송**
+- 🗄️ **리뷰 데이터는 MySQL 저장 + Redis의 pending-review로 큐 관리**
+
+<br>
 
 ## 📨 Contact
 - **Developer**: INSU
