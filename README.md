@@ -58,8 +58,6 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 - **Riot Games API** - 게임 데이터 연동
 - **OpenAI API** - 자연어 처리 매칭
 
-> ⚠️ **주의사항**: Riot API 키는 **매일 갱신**이 필요하며, **사용 횟수 제한**이 있습니다.
-
 ## 📨 Contact
 - **Developer**: INSU
 - **Email**: cth7097@naver.com
