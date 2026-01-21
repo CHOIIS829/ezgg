@@ -119,26 +119,6 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
   <img width="800" alt="아키텍처" src="https://github.com/user-attachments/assets/129b0b13-3a47-42af-90fd-92587cad1988" />
 </p>
 
-<<<<<<< Updated upstream
-## 🛠 기술 스택
-
-### Backend
-- **Java 21** & **Spring Boot 3.4.4**
-- **WebSocket** - 실시간 매칭 시스템
-- **ElasticSearch** - 검색 및 매칭 알고리즘
-- **Redis** - 캐싱 및 세션 관리
-- **Docker** - 컨테이너화
-
-### Frontend
-- **React 19.1** + **Vite**
-- **Node.js 23.11.0** / **npm 11.3.0**
-
-### External APIs
-- **Riot Games API** - 게임 데이터 연동
-- **OpenAI API** - 자연어 처리 매칭
-
-=======
->>>>>>> Stashed changes
 ## 📨 Contact
 - **Developer**: INSU
 - **Email**: cth7097@naver.com
