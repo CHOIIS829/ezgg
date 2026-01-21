@@ -25,8 +25,11 @@
 
 ## 🚀 프로젝트 소개
 
-EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매칭 플랫폼**입니다.  
-혼자가 아닌 **듀오로 랭크를 올리고 싶은 유저들**에게 자신의 플레이 스타일과 성향에 맞는 파트너를 찾을 수 있는 서비스를 제공합니다.
+이 프로젝트는 기존 [duo.gg](http://duo.gg/) 사이트의 게시판 기반 시스템이 다소 번거롭다고 느껴져, 보다 간편하게 듀오 게임 유저를 찾을 수 있는 서비스를 만들고자 시작되었습니다.
+
+사용자는 회원가입과 로그인을 마친 뒤, 간단한 조건을 입력하고 매칭 시작 버튼을 누르면 해당 조건에 맞는 유저와 자동으로 매칭됩니다. 매칭된 유저와는 실시간 채팅을 통해 간단한 대화를 나눌 수 있으며, 아이디 복사 버튼을 활용해 롤 클라이언트에서 손쉽게 친구 추가 후 듀오 플레이를 진행할 수 있습니다.
+
+게임이 종료된 후 사이트에 다시 접속하면, 함께 플레이한 유저에 대한 리뷰를 작성할 수 있는 기능도 제공됩니다.
 
 <br>
 
@@ -36,7 +39,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 ### Spring Security & JWT
 - **로그인**
 <p align="center">
-<img width="1385" height="753" alt="Image" src="https://github.com/user-attachments/assets/1e40e2a7-dd9d-40bb-bc35-8861cb99c586" />
+<img src="https://github.com/user-attachments/assets/1e40e2a7-dd9d-40bb-bc35-8861cb99c586" width="800" />
 </p>
 
 1. `UsernamePasswordAuthenticationFilter`를 상속받은 `LoginFilter`를 만들어 로그인 기능 구현
@@ -46,7 +49,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 - **로그아웃**
 <p align="center">
-<img width="1310" height="491" alt="Image" src="https://github.com/user-attachments/assets/de0d9e15-d77c-4db5-b815-131347e5c707" />
+<img src="https://github.com/user-attachments/assets/de0d9e15-d77c-4db5-b815-131347e5c707" width="800" />
 </p>
 
 1. 로그아웃 요청을 하면 Http Header에 포함된 accessToken을 가지고 redis에 토큰의 만료시간을 TTL로 설정하여 BlackList로 저장
@@ -55,7 +58,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 - **RefreshToken 재발급**
 <p align="center">
-<img width="962" height="469" alt="Image" src="https://github.com/user-attachments/assets/2b0b183f-c490-4d2b-aa7f-f5f981590ef8" />
+<img src="https://github.com/user-attachments/assets/2b0b183f-c490-4d2b-aa7f-f5f981590ef8" width="800" />
 </p>
 
 1. refreshToken 재발급 요청이 들어오면 `RefreshService`에서 요청이 들어온 refreshToken의 유효성을 검사
@@ -63,7 +66,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 - **인증이 필요한 api**
 <p align="center">
-<img width="853" height="446" alt="Image" src="https://github.com/user-attachments/assets/06fabde3-dcc0-4d0e-87de-a96bc468c6bb" />
+<img src="https://github.com/user-attachments/assets/06fabde3-dcc0-4d0e-87de-a96bc468c6bb" width="800" />
 </p>
 
 1. `SecurityConfig`에서 `requestMatchers`를 통해 허용한 요청을 제외한 모든 요청은 `OncePerRequestFilter`를 통해 구현한 `JWTFilter`를 통해 인증 검사를 받음
@@ -72,7 +75,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 ### 매칭 시스템
 <p align="center">
-<img width="1305" height="788" alt="Image" src="https://github.com/user-attachments/assets/82aae7f8-2f53-468d-b19f-5a0489215911" />
+<img src="https://github.com/user-attachments/assets/82aae7f8-2f53-468d-b19f-5a0489215911" width="800" />
 </p>
 
 1. `/matching/start` 웹소켓 요청이 들어오면 redis의 stream과 Hash에 매칭요청이 들어온 유저의 정보를 저장
@@ -84,7 +87,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 ### 리뷰 알림 시스템
 <p align="center">
-<img width="973" height="587" alt="Image" src="https://github.com/user-attachments/assets/b86eb9a4-e223-48ee-989e-5057db789cc0" />
+<img src="https://github.com/user-attachments/assets/b86eb9a4-e223-48ee-989e-5057db789cc0" width="800" />
 </p>
 
 1. 매칭이 성공된 시점에 redis의 match-success에 매칭된 두 유저의 정보와 매칭이 완료된 시점의 시간을 저장
@@ -171,6 +174,10 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 - 🗄️ **리뷰 데이터는 MySQL 저장 + Redis의 pending-review로 큐 관리**
 
 <br>
+
+
+## 📝 회고
+프로젝트 개발 과정에서의 기술적 고민과 해결 과정은 [RETROSPECTIVE.md](./RETROSPECTIVE.md)에서 확인하실 수 있습니다.
 
 ## 📨 Contact
 - **Developer**: INSU
