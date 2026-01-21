@@ -11,3 +11,6 @@ spring:
           model: text-embedding-3-small
 server:
   port: 8888
+
+api:
+  key: ${RIOT_API_KEY}
