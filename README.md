@@ -103,8 +103,8 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 #### ▼ 🧩 로그인 & 회원가입
 <p align="center">
-<img width="712" height="560" alt="Image" src="https://github.com/user-attachments/assets/86436b8a-a911-49a9-97b9-73a37199a816" />
-<img width="718" height="975" alt="Image" src="https://github.com/user-attachments/assets/26866e40-3927-4f07-b846-b165c7ba765e" />
+<img src="https://github.com/user-attachments/assets/86436b8a-a911-49a9-97b9-73a37199a816" width="45%" />
+<img src="https://github.com/user-attachments/assets/26866e40-3927-4f07-b846-b165c7ba765e" width="45%" />
 </p>
 
 - ✅ **JWT + Spring Security 기반 로그인 구현**
@@ -117,7 +117,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 #### ▼ 🏠 메인페이지
 <p align="center">
-<img width="2550" height="1283" alt="Image" src="https://github.com/user-attachments/assets/c433f558-b5cc-4081-aadd-f5eb48af0d0c" />
+<img src="https://github.com/user-attachments/assets/c433f558-b5cc-4081-aadd-f5eb48af0d0c" width="800" />
 </p>
 
 - 🧭 **사용자 정보와 매칭 조건을 UI 섹션으로 분리하여 배치**
@@ -128,8 +128,8 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 #### ▼ 🎯 매칭 페이지
 <p align="center">
-<img width="1495" height="991" alt="Image" src="https://github.com/user-attachments/assets/5a4e23f5-cb00-42c9-81a5-2f232970ec3d" />
-<img width="1467" height="841" alt="Image" src="https://github.com/user-attachments/assets/0b98d638-a241-4139-a46d-a61a7c966077" />
+<img src="https://github.com/user-attachments/assets/5a4e23f5-cb00-42c9-81a5-2f232970ec3d" width="45%" />
+<img src="https://github.com/user-attachments/assets/0b98d638-a241-4139-a46d-a61a7c966077" width="45%" />
 </p>
 
 - 👨‍🦱 **왼쪽: 나의 최근 20경기 정보 및 티어/포지션 정보 표시**
@@ -141,7 +141,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 #### ▼ 🤝 매칭 완료 페이지
 <p align="center">
-<img width="1435" height="1173" alt="Image" src="https://github.com/user-attachments/assets/9dd54cf4-a78c-4d3e-befe-3005ab4c2163" />
+<img src="https://github.com/user-attachments/assets/9dd54cf4-a78c-4d3e-befe-3005ab4c2163" width="800" />
 </p>
 
 - 👫 **매칭된 상대방의 요약 정보를 직관적으로 표시**
@@ -152,7 +152,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 #### ▼ 🕒 듀오 타임라인
 <p align="center">
-<img width="830" height="745" alt="Image" src="https://github.com/user-attachments/assets/9a0b6a67-93dd-432a-b381-1340952e3083" />
+<img src="https://github.com/user-attachments/assets/9a0b6a67-93dd-432a-b381-1340952e3083" width="800" />
 </p>
 
 - 📜 **지금까지 매칭된 유저 목록 + 실제로 게임을 진행한 기록을 시각적으로 제공**
@@ -162,7 +162,7 @@ EZ.GG는 리그 오브 레전드를 즐기는 유저들을 위한 **듀오 매�
 
 #### ▼ 📝 리뷰 시스템
 <p align="center">
-<img width="5112" height="2584" alt="Image" src="https://github.com/user-attachments/assets/980e1969-dcc5-45bb-afb2-19a6bd874fe4" />
+<img src="https://github.com/user-attachments/assets/980e1969-dcc5-45bb-afb2-19a6bd874fe4" width="800" />
 </p>
 
 - ✍️ **실제 듀오 플레이가 확인된 유저에 한해 리뷰 작성 가능**
