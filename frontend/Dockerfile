@@ -24,8 +24,8 @@ RUN npm install -g serve
 # Builder 스테이지에서 빌드된 정적 파일만 복사
 COPY --from=builder /app/dist ./dist
 
-# 포트 설정 통일 (3030)
-EXPOSE 3030
+# 포트 설정 통일 (3000)
+EXPOSE 3000
 
 # 포트 지정하여 실행
-CMD ["serve", "-s", "dist", "-l", "3030"]
+CMD ["serve", "-s", "dist", "-l", "3000"]

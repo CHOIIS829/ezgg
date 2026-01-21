@@ -1,0 +1,8 @@
+.gradle
+build
+out
+bin
+.git
+.idea
+.vscode
+*.ds_store

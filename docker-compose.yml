@@ -1,0 +1,93 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
+    container_name: ezgg-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - SERVER_HOST=0.0.0.0
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+      - ezgg-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\":\"green\"\\|\"status\":\"yellow\"'"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.9.0
+    container_name: ezgg-kibana
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - SERVER_HOST=0.0.0.0
+    networks:
+      - ezgg-network
+
+  server:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ezgg-server
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SERVER_HOST=0.0.0.0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - RIOT_API_KEY=${RIOT_API_KEY}
+    restart: unless-stopped
+    networks:
+      - ezgg-network
+    command: ["java", "-jar", "app.jar", "-web", "-webAllowOthers", "-tcp", "-tcpAllowOthers", "-browser"]
+
+  redis:
+    image: redis
+    container_name: ezgg-redis
+    ports:
+      - "6379:6379"
+    environment:
+      - SERVER_HOST=0.0.0.0
+    volumes:
+      - redis_data:/data
+    networks:
+      - ezgg-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: ezgg-frontend
+    ports:
+      - "80:3000"
+    environment:
+      - SERVER_HOST=0.0.0.0
+    networks:
+      - ezgg-network
+
+volumes:
+  elasticsearch-data:
+  redis_data:
+
+networks:
+  ezgg-network:
+    driver: bridge

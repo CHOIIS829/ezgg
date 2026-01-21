@@ -28,5 +28,5 @@ WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar app.jar
 
 # 실행 (프로파일 및 옵션 설정)
-CMD ["java", "-jar", "/app.jar", "-web", "-webAllowOthers", "-tcp", "-tcpAllowOthers", "-browser"]
+CMD ["java", "-jar", "app.jar", "-web", "-webAllowOthers", "-tcp", "-tcpAllowOthers", "-browser"]
 
